@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection - GIC Student Progress Assessment</title>
+    <!-- Make sure the path to the CSS file is correct -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <!-- Ensure the logo.svg is placed in the static directory -->
+            <img src="{{ url_for('static', filename='logo.svg') }}" alt="GIC Logo" class="logo">
+            <h1>Data Collection Form</h1>
+        </header>
+        <nav class="navbar">
+            <ul>
+                <!-- These links will direct to the respective Flask routes -->
+                <li><a href="{{ url_for('welcome') }}">Welcome</a></li>
+                <li><a href="{{ url_for('information') }}">Information</a></li>
+                <li><a href="{{ url_for('data_collection') }}">Data Collection</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <!-- The form action points to the data_collection route -->
+            <form method="POST" action="{{ url_for('data_collection') }}" class="myform">
+                {{ form.hidden_tag() }} <!-- CSRF token -->
+                <div>
+                    {{ form.name.label }} {{ form.name(size=32) }}
+                </div>
+                <div>
+                    {{ form.student_number.label }} {{ form.student_number(size=32) }}
+                </div>
+                <div>
+                    {{ form.email.label }} {{ form.email(size=32) }}
+                </div>
+                <div>
+                    {{ form.grades.label }} {{ form.grades(rows=4) }}
+                </div>
+                <div>
+                    {{ form.satisfaction.label }} {{ form.satisfaction() }}
+                </div>
+                <div>
+                    {{ form.suggestions.label }} {{ form.suggestions(rows=4) }}
+                </div>
+                <div>
+                    {{ form.submit() }}
+                </div>
+            </form>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2024 Glasgow International College</p>
+            <div class="student-info">
+                <p>Name: Saad al sabah</p>
+                <p>ID: P425435</p>
+                <p>Email: <a href="mailto:Saad.a.a.alsabah@gmail.com">Saad.a.a.alsabah@gmail.com</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

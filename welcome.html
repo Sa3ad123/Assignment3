@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to GIC Student Progress Assessment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="{{ url_for('static', filename='logo.svg') }}" alt="GIC Logo" class="logo">
+            <h1 style="font-size: 2.5em; font-weight: bold;">GIC Student Progress Assessment</h1>
+        </header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('welcome') }}" class="active">Welcome</a></li>
+                <li><a href="{{ url_for('information') }}">Information</a></li>
+                <li><a href="{{ url_for('data_collection') }}">Data Collection</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <section class="welcome-section">
+                <h2>Welcome to the Glasgow International College</h2>
+                <p style="font-size: 1.2em;">We are delighted to welcome you to our Student Progress Assessment Platform. This platform is designed to collect and assess data on students' academic progress to enhance their learning experience.</p>
+                <p style="font-size: 1.2em;">At GIC, we are committed to providing a supportive and enriching environment for our students. We believe that by monitoring academic progress and gathering feedback, we can continually improve our programs and services.</p>
+                <p style="font-size: 1.2em;">Navigate through our website to learn more about the data collection process and to participate in our questionnaire. Your input is invaluable in helping us achieve our goal of academic excellence.</p>
+                <p style="font-size: 1.2em;">The University of Glasgow is renowned for its international student support, offering guidance throughout the student journey, from visas and immigration to welcome and orientation events.</p>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2024 Glasgow International College</p>
+            <div class="student-info">
+                <p>Name: Saad al sabah</p>
+                <p>ID: P425435</p>
+                <p>Email: <a href="mailto:Saad.a.a.alsabah@gmail.com">Saad.a.a.alsabah@gmail.com</a></p>
+            </div>
+        </footer>
+        
+    </div>
+</body>
+</html>
